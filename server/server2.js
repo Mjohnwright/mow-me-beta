@@ -49,7 +49,6 @@ app.use(function(req, res, next) {
 })
 
 
-
 // ==== if its production environment!
 if (process.env.NODE_ENV === 'production') {
 	const path = require('path')
@@ -80,67 +79,74 @@ app.listen(PORT, () => {
 
 
 const userSeed = [
-  {    
-    firstName: "amy",
-    lastName: "barrons",
-    phone:"123456",
-    email: "user@user.com",
-    username:"amy",
-    password:"123",
-    dateJoined: new Date(Date.now())
+  {
+    firstName: "ronald",
+    lastName: "mcdonald",
+    phone:2151234567,
+     email: "mikeguy@gmail.com",
+     username:"mikeuser",
+     password:"password",
+     passwordConf:"password",
+     dateJoined: new Date(Date.now())
   },
-    {    
-      firstName: "brian",
-      lastName: "barrons",
-      phone:"123456",
-      email: "user@user.com",
-      username:"brian",
-      password:"123",
-      dateJoined: new Date(Date.now())
-    },
-    {    
-      firstName: "chris",
-      lastName: "barrons",
-      phone:"123456",
-      email: "user@user.com",
-      username:"chris",
-      password:"123",
-      dateJoined: new Date(Date.now())
-    }
-  
- 
+  {
+    firstName: "first",
+    lastName: "last",
+    phone:2151234568,
+     email: "second@gmail.com",
+     username:"seconduser",
+     password:"password",
+     passwordConf:"password",
+     dateJoined: new Date(Date.now())
+  }
  ];
 
 const jobsSeed = [
   {
-    username: "zelda",
+    username: "marc",
     streetAddress: "333 street",
     city:"phila",
     state: "PA",
     zipCode:"19148",
     price:"100",
-    dateNeededBy: new Date(Date.now()),
-    jobChosen: false
+    dateNeededBy: new Date(Date.now())
   },
   {
-    username: "zelda",
-    streetAddress: "333 street",
+    username: "mann",
+    streetAddress: "222 street",
     city:"phila",
     state: "PA",
     zipCode:"19148",
     price:"100",
-    dateNeededBy: new Date(Date.now()),
-    jobChosen: false
+    dateNeededBy: new Date(Date.now())
+  }
+  ,
+  {
+    username: "mann",
+    streetAddress: "222 street",
+    city:"phila",
+    state: "PA",
+    zipCode:"19148",
+    price:"100",
+    dateNeededBy: new Date(Date.now())
   },
   {
-    username: "zelda",
-    streetAddress: "333 street",
+    username: "mann",
+    streetAddress: "222 street",
     city:"phila",
     state: "PA",
     zipCode:"19148",
     price:"100",
-    dateNeededBy: new Date(Date.now()),
-    jobChosen: false
+    dateNeededBy: new Date(Date.now())
+  },
+  {
+    username: "mann",
+    streetAddress: "222 street",
+    city:"phila",
+    state: "PA",
+    zipCode:"19148",
+    price:"100",
+    dateNeededBy: new Date(Date.now())
   }
  ];
 

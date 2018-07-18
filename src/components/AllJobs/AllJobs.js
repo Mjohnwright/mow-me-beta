@@ -28,7 +28,7 @@ class AllJobs extends Component {
         let data = res.data;
         console.log("data = " + data);
         
-        let data2 = data.username;
+        let data2 = data[0];
         console.log("data2 = " + data2);
         // console.log(JSON.stringify(data));
  

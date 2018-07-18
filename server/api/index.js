@@ -5,37 +5,44 @@ const Job = require('../db/models/jobs')
 // this route is just used to get the job listing info
 router.get('/jobs/', (req, res ) => {
 	console.log('===== job!!======') //THIS IS NOT BEING HIT
-	console.log("REQ JOB = " + req.body)
-		if (req.body === []) {
-			console.log("EMPTY") 
-		
-		} 
-		
-		else {
-			console.log("NOT empty")
-		}
-	let allJobs = JSON.stringify(req.body);
-	console.log("allJobs = " + allJobs);
+	console.log("REQ JOB = " + JSON.stringify(req.body));
 
-// get all the users
+	let allJobs = req.body;
+	console.log("allJobs = " + JSON.stringify(allJobs));
 	Job.find({}, function(err, jobs) {
-	if (err) throw err;
-	// Job.sort({ date: -1})
-	// object of all the users
-	console.log("JOBS in Mongoose NEW")
-	//allJobs.push(jobs[0])
-	
-	console.log("ALLJOBS in Mongoose 0" + allJobs[0]);
-
-	
+	if (err) console.log(err);
+	res.status(200).send(jobs);
   });
-//    let data = res.json(data)
-
-//   let data = req.body
-//   console.log("Data = " + data);
-
-res.status(200).send(allJobs);
 });
 
-
 module.exports = router
+
+// router.get('/jobs/', (req, res ) => {
+// 	console.log('===== job!!======') //THIS IS NOT BEING HIT
+// 	console.log("REQ JOB = " + req.job)
+
+// 	let allJobs = req.body;
+// 	console.log("allJobs = " + allJobs);
+
+// // get all the users
+// 	Job.find({}, function(err, jobs) {
+// 	if (err) throw err;
+// 	// Job.sort({ date: -1})
+// 	// object of all the users
+// 	console.log("JOBS in Mongoose NEW")
+// 	//allJobs.push(jobs[0])
+	
+// 	console.log("ALLJOBS in Mongoose 0" + allJobs[0]);
+
+	
+//   });
+// //    let data = res.json(data)
+
+// //   let data = req.body
+// //   console.log("Data = " + data);
+
+// res.status(200).send(jobs);
+// });
+
+
+// module.exports = router
