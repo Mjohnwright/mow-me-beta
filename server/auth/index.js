@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-// const Job = require('../db/models/jobs')
+const Job = require('../db/models/jobs')
 const User = require('../db/models/user')
 const passport = require('../passport')
 
@@ -68,7 +68,7 @@ router.post('/register', (req, res) => {
 })
 
 // this route is used to create a new job
-router.post('/createjob', (req, res) => {
+router.post('/createjob/', (req, res) => {
 	console.log('POST is hit in the index.js file')
 	console.log(req.body);
 // create a new user

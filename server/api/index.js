@@ -6,9 +6,17 @@ const Job = require('../db/models/jobs')
 router.get('/jobs/', (req, res ) => {
 	console.log('===== job!!======') //THIS IS NOT BEING HIT
 	console.log("REQ JOB = " + req.body)
-
-	let allJobs = req.body;
+		if (req.body === []) {
+			console.log("EMPTY") 
+		
+		} 
+		
+		else {
+			console.log("NOT empty")
+		}
+	let allJobs = JSON.stringify(req.body);
 	console.log("allJobs = " + allJobs);
+
 // get all the users
 	Job.find({}, function(err, jobs) {
 	if (err) throw err;
