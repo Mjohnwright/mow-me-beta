@@ -52,7 +52,7 @@ class LoginForm extends Component {
 			.then(res =>{
 			  console.log("logging in sir")
 			  console.log(res.data);
-			  window.location.href = "/login";
+			  window.location.href = "/";
 			})
 			.catch(err => console.log(err));
 		}

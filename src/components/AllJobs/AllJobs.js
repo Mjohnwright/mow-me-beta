@@ -17,16 +17,18 @@ class AllJobs extends Component {
     console.log("Get is fired");
 
 
-    axios
-      .get("/api/jobs/")
+    return axios
+      .get("/api/jobs")
       .then(res => {
+        console.log("RES: ", res)
         console.log("FIRED");
 
         // console.log("this is the string" + JSON.stringify(response))
         // console.log(JSON.stringify(response["data"]))
         let data = res.data;
-         
         console.log("data = " + data);
+        let data2 = JSON.stringify(data);
+        console.log("data Stringified = " + data2);
         // console.log(JSON.stringify(data));
  
          console.log("data.username = " + data.username)
