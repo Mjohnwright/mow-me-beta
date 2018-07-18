@@ -1,0 +1,26 @@
+
+.navbar-brand {
+    
+    opacity: 5.0;
+}
+
+
+.btn-outlined.btn-success {
+    background: #fbff48;
+    font-weight: bold;
+    border-radius: 10px;
+    margin: 10px;
+}
+.btn-outlined.btn-success a:hover {
+    text-decoration: none;
+};
+    
+.btn-outlined.btn-success:active {
+    font-weight: bold;
+    color: #FFF;
+    background: #47a447;
+}
+
+
+
+
