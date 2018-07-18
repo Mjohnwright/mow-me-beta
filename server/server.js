@@ -113,7 +113,7 @@ const userSeed = [
 
 const jobsSeed = [
   {
-    username: "zelda",
+    username: "Amos",
     streetAddress: "333 street",
     city:"phila",
     state: "PA",
@@ -123,7 +123,7 @@ const jobsSeed = [
     jobChosen: false
   },
   {
-    username: "zelda",
+    username: "Xerxes",
     streetAddress: "333 street",
     city:"phila",
     state: "PA",
@@ -133,7 +133,7 @@ const jobsSeed = [
     jobChosen: false
   },
   {
-    username: "zelda",
+    username: "Yolanda",
     streetAddress: "333 street",
     city:"phila",
     state: "PA",

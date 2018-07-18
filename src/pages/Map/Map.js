@@ -1,5 +1,4 @@
 import React from "react";
-import Nav from "../../components/Nav";
 import Container from "../../components/Container";
 //import MapContainer from "../../components/MapContainer";
 import Row from "../../components/Row";

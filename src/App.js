@@ -5,7 +5,7 @@ import { Route, Link } from 'react-router-dom'
 // Components
 import LoginForm from '../src/components/LoginForm'
 import Header from './components/Header/index'
-
+import Nav from './components/Nav/index'
 
 // Pages
 import Jobs from "./pages/Jobs/Jobs";
@@ -20,13 +20,14 @@ import Map from "./pages/Map/Map";
 import "./App.css";
 
 
-{/* DISPLAYLINKS set up to manipulate Nav according to User login status */}
 const DisplayLinks = props => {
 
   if (props.loggedIn) {
   return (
       <ul className="nav">
-  
+
+      <a class="navbar-brand"  href= "/"> <img src="https://s3.us-east-2.amazonaws.com/devteammembers/yellow-mower.png" alt="yellow-mower" height="80"/></a>
+
       
       <li className="btn btn-outlined btn-success" {...window.location.pathname === "/" ? "active" : ""}>
       <Link to="/">Home</Link>
@@ -52,7 +53,9 @@ const DisplayLinks = props => {
   return (
 
       <ul className="nav">
-  
+    
+    <a class="navbar-brand"  href= "/"> <img src="https://s3.us-east-2.amazonaws.com/devteammembers/yellow-mower.png" alt="yellow-mower" height="80"/></a>
+
       
       <li className="btn btn-outlined btn-success" {...window.location.pathname === "/" ? "active" : ""}>
       <Link to="/">Home</Link>

@@ -5,8 +5,9 @@ import "./Nav.css";
 const Nav = props => (
   <div class="navbar transparent">
   <nav className="navbar navbar-expand-lg"> 
-  <a class="navbar-brand"  href= "/"> <img src="https://s3.us-east-2.amazonaws.com/devteammembers/yellow-mower.png" height="80"/></a>
-  
+  {/* <a class="navbar-brand"  href= "/src/images/yellow-mower.png" height="80"/> </a> */}
+  <a class="navbar-brand"  href= "/"> <img src="https://s3.us-east-2.amazonaws.com/devteammembers/yellow-mower.png" alt="yellow-mower" height="80"/></a>
+
   {/* <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span className="navbar-toggler-icon"></span>
   </button> */}

@@ -12,10 +12,10 @@ class AllJobs extends Component {
     this.loadJobs()
   }
 
-
   loadJobs = event => {
     console.log("Get is fired");
 
+    
 
     return axios
       .get("/api/jobs")
@@ -23,33 +23,16 @@ class AllJobs extends Component {
         console.log("RES: ", res)
         console.log("FIRED");
 
-        // console.log("this is the string" + JSON.stringify(response))
-        // console.log(JSON.stringify(response["data"]))
         let data = res.data;
         console.log("data = " + data);
         
         let data2 = data[0];
         console.log("data2 = " + data2);
-        // console.log(JSON.stringify(data));
- 
-         console.log("data.username = " + data.username)
-         console.log("data.username = " + data.streetAddress)
-         console.log("data.username = " + data.city)
-         console.log("data.username = " + data.state)
-         console.log("data.username = " + data.zipCode)
-         console.log("data.username = " + data.price)
-         console.log("data.username = " + data.dateNeededBy)
 
          this.setState({
           allJobs: data
         });
 
-        // console.log(this.state.allJobs)
-        // console.log(this.state.allJobs[0].city)
-        console.log(this.state.allJobs.streetAddress)
-        // console.log(this.state.username)
-
-        // response["data"][0].username)
 
       })
       .catch(function (error) {
@@ -57,39 +40,52 @@ class AllJobs extends Component {
       })
 
   };
+
+  handleJobDelete = id => {
+    axios
+    .delete("/api/jobs/", {id:id}).then(res => this.loadJobs());
+  };
+
   render() {
     return (
 
       <div className="center">
-        <div className="jumbotron-create">
+        <div className="jumbotron-alljobs">
         </div>
-        <div className="transbox-create-bg">
-          <div className="transbox-create">
-            <table>
+        <div className="transbox-alljobs-bg">
+          <div className="transbox-alljobs">
+          <table className="table table-bordered">
+          <h4><strong>Current Jobs Available</strong></h4>
+
+            
               <tbody>
                 <tr>
 
-                  <th>User Name</th>
-                  <th>Street Address</th>
-                  <th>City</th>
-                  <th>State</th>
-                  <th>Zip</th>
-                  <th>Price</th>
-                  <th>Date Needed by</th>
-                  <th>CLAIM</th>
+                <th className="thead">Customer Name</th>
+                  <th className="thead">Job Address</th>
+                  <th className="thead">City</th>
+                  <th className="thead">State</th>
+                  <th className="thead">Zip</th>
+                  <th className="thead">Price</th>
+                  <th className="thead">Date Needed by</th>
+                  <th className="thead">CLAIM</th>
 
+             
                 </tr>
                 {this.state.allJobs.map(job => (
 
                    <tr>
-                    <td>{job.username}</td>
-                    <td>{job.streetAddress}</td>
-                    <td>{job.city}</td>
-                    <td>{job.state}</td>
-                    <td>{job.zipCode}</td>
-                    <td>{job.price}</td>
-                    <td>{job.dateNeededBy}</td>
-                    <button>CLAIM</button>
+                      <td className="tdata">{job.username}</td>
+                    <td className="tdata">{job.streetAddress}</td>
+                    <td className="tdata">{job.city}</td>
+                    <td className="tdata">{job.state}</td>
+                    <td className="tdata">{job.zipCode}</td>
+                    <td className="tdata">{job.price}</td>
+                    <td className="tdata">{job.dateNeededBy}</td>
+                    {/* <button onClick={() => handleJobDelete(job.id)} className="btn btn-primary">CLAIM</button> */}
+                    <td className="btn btn-primary"><strong>CLAIM</strong></td>
+
+
 
                   </tr>
 

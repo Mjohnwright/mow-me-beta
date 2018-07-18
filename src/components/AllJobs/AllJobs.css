@@ -1,11 +1,58 @@
-th {
-    color: black;
-}
-
-td {
-    color: black
-    ;
-}
+.table-alljobs {
+    color:white;
+    width:100%;
+    height:50px;
+    text-align: left;
+    font-weight: bolder;
+    
+    }
+    .thead{
+        color:white;
+      
+       }
+    .tdata{
+        color:white;
+        /* border: 1px solid white; */
+    }
+    
+    .jumbotron-alljobs{
+      position:absolute;
+      z-index:  -50;
+      background-color: #1e6f41;
+      width: 900px;
+      height: 350px;
+      margin-left:300px;
+      opacity: .6;
+      border:4px solid white;
+    
+    }
+    div.transbox-alljobs{
+      position: absolute;
+      /* background-color: none; */
+      width: 900px;
+      height: 350px;
+      margin-left:300px;
+      border:4px solid white;
+    
+    }
+    
+    .btn-primary{
+        color:#20720d;
+        background-color:#fbff48;
+    }
+    .btn-primary:hover{
+      color:#fbff48;
+      background-color:#20720d;
+    }
+    
+    body{
+      color:white;
+    }
+    
+      
+      
+    
+      
 
     
   

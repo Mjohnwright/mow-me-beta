@@ -2,7 +2,7 @@ import React from "react";
 import Container from "../components/Container";
 import Row from "../components/Row";
 import Col from "../components/Col";
-import Nav from "../components/Nav";
+// import Nav from "../components/Nav";
 import LoginForm from "../components/LoginForm";
 
 
