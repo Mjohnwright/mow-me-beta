@@ -54,7 +54,7 @@ const DisplayLinks = props => {
 
       <ul className="nav">
     
-    <a class="navbar-brand"  href= "/"> <img src="https://s3.us-east-2.amazonaws.com/devteammembers/yellow-mower.png" alt="yellow-mower" height="80"/></a>
+    <a className="navbar-brand"  href= "/"> <img src="https://s3.us-east-2.amazonaws.com/devteammembers/yellow-mower.png" alt="yellow-mower" height="80"/></a>
 
       
       <li className="btn btn-outlined btn-success" {...window.location.pathname === "/" ? "active" : ""}>

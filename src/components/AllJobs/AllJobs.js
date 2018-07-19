@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./AllJobs.css";
 import axios from "axios";
+import formatDate from "./formatDate";
+
 // import "./JobBoard.js";
 
 class AllJobs extends Component {
@@ -14,20 +16,17 @@ class AllJobs extends Component {
 
   loadJobs = event => {
     console.log("Get is fired");
-
-    
-
     return axios
       .get("/api/jobs")
       .then(res => {
-        console.log("RES: ", res)
-        console.log("FIRED");
+        // console.log("RES: ", res)
+        // console.log("FIRED");
 
         let data = res.data;
-        console.log("data = " + data);
+        // console.log("data = " + data);
         
-        let data2 = data[0];
-        console.log("data2 = " + data2);
+        // let data2 = data[0];
+        // console.log("data2 = " + data2);
 
          this.setState({
           allJobs: data
@@ -40,12 +39,34 @@ class AllJobs extends Component {
       })
 
   };
-
+  //HANDLE DELETE
   handleJobDelete = id => {
-    axios
-      .delete("/api/jobs/"+ id)
+    console.log("DELETE IS fired");
+
+   return axios
+      .delete('/api/jobdelete/'+ id)
       .then( this.loadJobs());
   };
+
+  // HANDlE UPDATE
+  handleJobUpdate = id => {
+    console.log("UPDATE is fired");
+
+    return axios
+      .put('/api/jobupdate/' + id)
+      .then(res => {
+        
+        let data = res.data;
+        this.setState({
+          allJobs: data
+        });
+
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+    }
+
 
   render() {
     return (
@@ -84,6 +105,7 @@ class AllJobs extends Component {
                     <td className="tdata">{job.price}</td>
                     <td className="tdata">{formatDate(job.dateNeededBy)}</td>
                     <td className="btn btn-primary"onClick={() => this.handleJobDelete(job._id)} ><strong>CLAIM</strong></td>
+                    <td className="btn btn-primary"onClick={() => this.handleJobUpdate(job._id)} ><strong>UPDATE</strong></td>
 
 
 

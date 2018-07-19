@@ -62,7 +62,8 @@ class LoginForm extends Component {
 		event.preventDefault()
 		console.log('handleSubmit')
 		this.props._login(this.state.username, this.state.password)
-		this.setState({
+    
+    this.setState({
 			redirectTo: '/home'
 		})
 	}

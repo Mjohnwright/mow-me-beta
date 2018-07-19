@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./CreateJob.css";
 import axios from "axios";
+import { Redirect } from 'react-router-dom'
 
 
 class CreateJob extends Component {
@@ -74,6 +75,8 @@ class CreateJob extends Component {
       })
       .then(function(response) {
         console.log(response);
+        window.location.href = "/";
+
       })
       .catch(function(error) {
         console.log(error);
@@ -86,7 +89,8 @@ class CreateJob extends Component {
       state: "",
       zipCode: "",
       price: "",
-      dateNeededBy: ""
+      dateNeededBy: "",
+      redirectTo: '/home'
     });
     
 
@@ -94,7 +98,10 @@ class CreateJob extends Component {
   };
 
   render() {
-    return (
+    if (this.state.redirectTo) {
+      return  <Redirect to={{ pathname: this.state.redirectTo }} />
+    } else {
+      return (
       
       <div className="center">
         <div className="jumbotron-create">
@@ -190,6 +197,7 @@ class CreateJob extends Component {
       </div>
     );
   }
+}
 }
 
 export default CreateJob;
