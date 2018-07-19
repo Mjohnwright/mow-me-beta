@@ -39,10 +39,10 @@ const DisplayLinks = props => {
       <Link to="/createjob">Create Job</Link>
       </li>
       <li className="btn btn-outlined btn-success" {...window.location.pathname === "/jobboard" ? "active" : ""}>
-      <Link to="/jobboard"><strong>Job Board</strong></Link>
+      <Link to="/jobboard">Job Board</Link>
       </li>
       <li className="btn btn-outlined btn-success" onClick={props._logout} {...window.location.pathname === "/" ? "active" : ""}>
-      <Link to="/"><strong>LogOut</strong></Link>
+      <Link to="/">LogOut</Link>
       </li>
 
       </ul>
@@ -140,7 +140,6 @@ _login() {
         {/*  ROUTES */}
         <Route exact path="/" render={() => <Home user={this.state.user} />} />
         <Route exact path="/home" render={() => <Home user={this.state.user} />} />
-
 				<Route exact path="/login" render={() => <LoginForm _login={this._login} />} />
 				<Route exact path="/users/login" component={Login} /> 
 				<Route exact path="/users/register" component={Register} />

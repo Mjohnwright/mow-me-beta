@@ -15,14 +15,6 @@ router.get('/jobs/', (req, res ) => {
   });
 });
 
-// router.update(/jobs/:id
-// )
-
-// handleJobDelete = id => {
-//     axios
-// .delete("/api/jobs/", {id:id}).then(res => this.loadJobs());
-//   };
-
 module.exports = router
 
 // router.get('/jobs/', (req, res ) => {

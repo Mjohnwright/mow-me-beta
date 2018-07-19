@@ -43,7 +43,8 @@ class AllJobs extends Component {
 
   handleJobDelete = id => {
     axios
-    .delete("/api/jobs/", {id:id}).then(res => this.loadJobs());
+      .delete("/api/jobs/"+ id)
+      .then( this.loadJobs());
   };
 
   render() {
@@ -75,15 +76,15 @@ class AllJobs extends Component {
                 {this.state.allJobs.map(job => (
 
                    <tr>
-                      <td className="tdata">{job.username}</td>
+                    <td className="tdata">{job.username}</td>
                     <td className="tdata">{job.streetAddress}</td>
                     <td className="tdata">{job.city}</td>
                     <td className="tdata">{job.state}</td>
                     <td className="tdata">{job.zipCode}</td>
                     <td className="tdata">{job.price}</td>
-                    <td className="tdata">{job.dateNeededBy}</td>
-                    {/* <button onClick={() => handleJobDelete(job.id)} className="btn btn-primary">CLAIM</button> */}
-                    <td className="btn btn-primary"><strong>CLAIM</strong></td>
+                    <td className="tdata">{formatDate(job.dateNeededBy)}</td>
+                    <td className="btn btn-primary"onClick={() => this.handleJobDelete(job._id)} ><strong>CLAIM</strong></td>
+
 
 
 
